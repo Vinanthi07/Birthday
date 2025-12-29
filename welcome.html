@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>For Div</title>
+  <meta charset="UTF-8">
+  <title>For Div 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<audio autoplay loop>
-  <source src="music/eru_nee_jothe.mp3">
-</audio>
 
-<h1>Happy 18th Birthday 🎂</h1>
-<h2>My Dearest Div 💕</h2>
+  <div class="welcome-container">
+    <h1 class="fade-in">Happy 18th Birthday 🎂</h1>
+    <h2 class="fade-in delay">My Dearest Div 💕</h2>
 
-<p>You were there for everyone’s breakdown,  
-even when no one was there for yours 🤍</p>
+    <p class="message fade-in delay2">
+      You were there in every situation.<br>
+      My silence, my chaos, my smiles.<br><br>
+      Today is not just your birthday,<br>
+      it’s a celebration of <strong>you</strong> 🤍
+    </p>
 
-<button onclick="location.href='memories.html'">✨ Start Journey</button>
+    <button onclick="goMemories()">✨ Start the Journey</button>
+  </div>
+
+  <script>
+    function goMemories() {
+      window.location.href = "memories.html";
+    }
+  </script>
+
 </body>
 </html>
