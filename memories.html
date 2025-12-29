@@ -71,6 +71,27 @@
       document.body.appendChild(confetti);
     }
   </script>
+<!-- Lightbox for full image view -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="">
+</div>
+
+<script>
+const photos = document.querySelectorAll('.photo img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+photos.forEach(photo => {
+  photo.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = photo.src;
+  });
+});
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+</script>
 
 </body>
 </html>
