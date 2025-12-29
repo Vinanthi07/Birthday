@@ -1,28 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Memories</title>
+  <meta charset="UTF-8">
+  <title>Memories with Div 💕</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<audio autoplay loop>
-  <source src="music/eru_nee_jothe.mp3">
-</audio>
 
-<h1>Her Journey 🤍</h1>
+  <h1 class="memory-title">Moments with You, Div 🤍</h1>
 
-<div class="gallery">
-  <div class="photo">
-    <img src="photos/pic1.jpg">
-    <p>I wasn’t in this frame, but I was always here.</p>
+  <div class="gallery">
+
+    <div class="photo">
+      <img src="photos/pic1.png.jpeg" alt="Memory 1">
+      <p>Caption for pic1</p>
+    </div>
+
+    <div class="photo">
+      <img src="photos/pic2.png.jpeg" alt="Memory 2">
+      <p>Caption for pic2</p>
+    </div>
+
+    <div class="photo">
+      <img src="photos/pic3.png.jpeg" alt="Memory 3">
+      <p>Caption for pic3</p>
+    </div>
+
+    <div class="photo">
+      <img src="photos/pic4.png.jpeg" alt="Memory 4">
+      <p>Caption for pic4</p>
+    </div>
+
+    <div class="photo">
+      <img src="photos/pic5.png.jpeg" alt="Memory 5">
+      <p>Caption for pic5</p>
+    </div>
+
+    <div class="photo">
+      <img src="photos/pic6.png.jpeg" alt="Memory 6">
+      <p>Caption for pic6</p>
+    </div>
+
+    <div class="photo">
+      <img src="photos/pic7.png.jpeg" alt="Memory 7">
+      <p>Caption for pic7</p>
+    </div>
+
+    <div class="photo">
+      <img src="photos/pic8.png.jpeg" alt="Memory 8">
+      <p>Caption for pic8</p>
+    </div>
+
+    <div class="photo">
+      <img src="photos/pic9.png.jpeg" alt="Memory 9">
+      <p>Caption for pic9</p>
+    </div>
+
+    <div class="photo">
+      <img src="photos/pic10.png.jpeg" alt="Memory 10">
+      <p>Caption for pic10</p>
+    </div>
+
   </div>
 
-  <div class="photo">
-    <img src="photos/pic2.jpg">
-    <p>You grew silently. I noticed everything.</p>
+  <div class="next-btn">
+    <button onclick="goNext()">💫 One More Surprise</button>
   </div>
-</div>
 
-<button onclick="location.href='fun.html'">😄 Next</button>
+  <script>
+    function goNext() {
+      window.location.href = "fun.html";
+    }
+  </script>
+
 </body>
 </html>
