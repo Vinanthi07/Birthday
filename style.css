@@ -1,0 +1,28 @@
+body {
+  font-family: Arial;
+  background: linear-gradient(#ff758c,#ff7eb3);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+button {
+  padding: 12px 25px;
+  border-radius: 20px;
+  border: none;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,200px);
+  gap: 20px;
+  justify-content: center;
+}
+.photo img {
+  width: 100%;
+  border-radius: 15px;
+}
+.fun-card {
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+  margin: 10px;
+  border-radius: 15px;
+}
