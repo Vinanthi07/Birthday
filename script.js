@@ -1,24 +1,28 @@
+// Set birthday date & time (Jan 26, 2026, midnight)
 const birthday = new Date("January 26, 2026 00:00:00").getTime();
 
-const timer = setInterval(() => {
-  const now = new Date().getTime();
-  const diff = birthday - now;
+const timer = setInterval(function () {
 
-  if (diff > 0) {
-    const d = Math.floor(diff / (1000*60*60*24));
-    const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-    const m = Math.floor((diff%(1000*60*60))/(1000*60));
-    const s = Math.floor((diff%(1000*60))/1000);
+  const now = new Date().getTime();
+  const distance = birthday - now;
+
+  if (distance > 0) {
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
     document.getElementById("time").innerHTML =
-      `${d}d ${h}h ${m}m ${s}s`;
+      `${days}d ${hours}h ${minutes}m ${seconds}s`;
   } else {
     clearInterval(timer);
     document.getElementById("time").innerHTML = "🎉 It's Time!";
     document.getElementById("lockedMsg").style.display = "none";
-    document.getElementById("surpriseBtn").style.display = "block";
+    document.getElementById("surpriseBtn").style.display = "inline-block";
   }
+
 }, 1000);
 
 function goNext() {
-  location.href = "welcome.html";
+  window.location.href = "welcome.html";
 }
