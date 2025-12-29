@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Always You</title>
+  <meta charset="UTF-8">
+  <title>Surprise 🎉</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Div 🤍</h1>
-<p>
-No matter where life takes us,  
-I’ll always be proud of you.  
-I’m here. Always.
-</p>
+  <div class="surprise-container">
+    <h1>🎉 Happy 18th Birthday Div! 🎉</h1>
+    <p>You’ve seen me in every situation,<br>
+    And I’ve seen you shine through everything.<br>
+    Today is YOUR day, my best friend forever 💖</p>
+  </div>
 
-<h2>— Vinanthi 💕</h2>
+  <script>
+    for(let i=0; i<100; i++){
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * window.innerWidth + 'px';
+      confetti.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+      confetti.style.animationDuration = 2 + Math.random()*3 + 's';
+      document.body.appendChild(confetti);
+    }
+  </script>
+
 </body>
 </html>
