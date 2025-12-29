@@ -2,54 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Memories 💕</title>
+  <title>Memories with VinDiv 💕</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Gallery container */
+    .gallery-container {
+      position: relative;
+      max-width: 700px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .gallery-slide {
+      display: none;
+    }
+
+    .gallery-slide img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    /* Next & Prev buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 10px;
+      margin-top: -25px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 50%;
+      user-select: none;
+      background: rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+  </style>
 </head>
 <body>
 
-  <h1 class="memory-title"> VinDiv 🤍</h1>
+  <h1 class="memory-title">Memories with VinDiv 🤍</h1>
 
-  <div class="gallery">
-    <div class="photo" style="animation-delay: 0.2s;">
+  <div class="gallery-container">
+
+    <!-- Slides -->
+    <div class="gallery-slide fade">
       <img src="photos/pic1.png.jpeg" alt="Memory 1">
-      <p>Fun times 😄</p>
+      <div class="caption">Fun times together 😄</div>
     </div>
-    <div class="photo" style="animation-delay: 0.5s;">
+
+    <div class="gallery-slide fade">
       <img src="photos/pic2.png.jpeg" alt="Memory 2">
-      <p>Your crazy adventures 🚀</p>
+      <div class="caption">Our crazy adventures 🚀</div>
     </div>
-    <div class="photo" style="animation-delay: 0.8s;">
+
+    <div class="gallery-slide fade">
       <img src="photos/pic3.png.jpeg" alt="Memory 3">
-      <p>Laugh till stomach ache's 😂</p>
+      <div class="caption">Laugh till we drop 😂</div>
     </div>
-    <div class="photo" style="animation-delay: 1.1s;">
+
+    <div class="gallery-slide fade">
       <img src="photos/pic4.png.jpeg" alt="Memory 4">
-      <p>Always there for each other 🤗</p>
+      <div class="caption">Always there for each other 🤗</div>
     </div>
-    <div class="photo" style="animation-delay: 1.4s;">
+
+    <div class="gallery-slide fade">
       <img src="photos/pic5.png.jpeg" alt="Memory 5">
-      <p> moments 💕</p>
+      <div class="caption">VinDiv moments 💕</div>
     </div>
-    <div class="photo" style="animation-delay: 1.7s;">
+
+    <div class="gallery-slide fade">
       <img src="photos/pic6.png.jpeg" alt="Memory 6">
-      <p>Unforgettable laughs 😍</p>
+      <div class="caption">Unforgettable laughs 😍</div>
     </div>
-    <div class="photo" style="animation-delay: 2s;">
+
+    <div class="gallery-slide fade">
       <img src="photos/pic7.png.jpeg" alt="Memory 7">
-      <p>Crazy 🤳</p>
+      <div class="caption">Crazy selfie times 🤳</div>
     </div>
-    <div class="photo" style="animation-delay: 2.3s;">
+
+    <div class="gallery-slide fade">
       <img src="photos/pic8.png.jpeg" alt="Memory 8">
-      <p>Random fun 💫</p>
+      <div class="caption">Random fun 💫</div>
     </div>
-    <div class="photo" style="animation-delay: 2.6s;">
+
+    <div class="gallery-slide fade">
       <img src="photos/pic9.png.jpeg" alt="Memory 9">
-      <p>Laughing forever 😂</p>
+      <div class="caption">Laughing forever 😂</div>
     </div>
-    <div class="photo" style="animation-delay: 2.9s;">
+
+    <div class="gallery-slide fade">
       <img src="photos/pic10.png.jpeg" alt="Memory 10">
-      <p> forever 💖</p>
+      <div class="caption">VinDiv forever 💖</div>
     </div>
+
+    <!-- Next/Prev buttons -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
   </div>
 
   <div class="next-btn">
@@ -57,41 +121,37 @@
   </div>
 
   <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("gallery-slide");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+
     function goNext() {
       window.location.href = "fun.html";
     }
 
-    // Small confetti when memories start
-    for(let i=0; i<50; i++){
+    // Confetti on first slide
+    for(let i=0;i<50;i++){
       const confetti = document.createElement('div');
-      confetti.className = 'confetti';
+      confetti.className='confetti';
       confetti.style.left = Math.random()*window.innerWidth+'px';
-      confetti.style.backgroundColor = `hsl(${Math.random()*360},100%,50%)`;
-      confetti.style.animationDuration = 2 + Math.random()*3 + 's';
+      confetti.style.backgroundColor=`hsl(${Math.random()*360},100%,50%)`;
+      confetti.style.animationDuration=2+Math.random()*3+'s';
       document.body.appendChild(confetti);
     }
   </script>
-<!-- Lightbox for full image view -->
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="">
-</div>
-
-<script>
-const photos = document.querySelectorAll('.photo img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-
-photos.forEach(photo => {
-  photo.addEventListener('click', () => {
-    lightbox.style.display = 'flex';
-    lightboxImg.src = photo.src;
-  });
-});
-
-function closeLightbox() {
-  lightbox.style.display = 'none';
-}
-</script>
 
 </body>
 </html>
