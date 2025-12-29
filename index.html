@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Countdown</title>
+  <meta charset="UTF-8">
+  <title>Birthday Countdown 🎂</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-  <h1>Surprise Loading… 🎂</h1>
-  <p id="time"></p>
-  <div id="lockedMsg">🔒 Come back on Jan 26</div>
-  <button id="surpriseBtn" onclick="goNext()">🎁 Click to Get Surprised</button>
-</div>
-<script src="script.js"></script>
+
+  <div class="container">
+    <h1>🎂 Surprise Loading...</h1>
+
+    <div id="countdown">
+      <p id="time"></p>
+    </div>
+
+    <div id="lockedMsg">
+      <p>🔒 Surprises are locked</p>
+      <p>Come back on Jan 26 💖</p>
+    </div>
+
+    <button id="surpriseBtn" onclick="goNext()">🎁 Click to Get Surprised</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
