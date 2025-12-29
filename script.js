@@ -1,5 +1,5 @@
 // Set birthday date & time (Jan 26, 2026, midnight)
-const birthday = new Date("January 26, 2026 00:00:00").getTime();
+const birthday = new Date("December 29, 2025 00:00:00").getTime();
 
 const timer = setInterval(function () {
 
